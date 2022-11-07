@@ -1,0 +1,97 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+Main *-- User
+Main : + static void main()
+
+User *-- Account
+User : - String nameOfUser
+User : - int ageOfUser
+
+
+
+
+User : + getNameOfUser()
+User : + getAgeOfUser()
+
+
+FileIO *-- Account
+
+Class FileIO
+FileIO : + Arraylist<String>
+
+
+Account : - String userName
+Account : - String password
+Account : - Arraylist <User> users
+Account : - watchedMovies
+
+
+
+Account : + Account(String userName, String password)
+Account : + Scanner getUserInput(System.in)
+Account : + getUserName()
+Account : + getPassword()
+Account : + setPassword()
+Account : + addUsers()
+Account : + getSavedMovies()
+Account : + getWatchedMovies()
+
+
+
+
+Account *-- MainMenu
+MainMenu : + displayOptions()
+MainMenu : + savedMovies()
+MainMenu : + watchedMovies()
+
+
+
+
+MainMenu *-- Media
+
+
+
+Media *-- Amedia
+Interface Media
+Media : + getNameMedia()
+Media : + getYearOfReleaseMedia()
+Media : + getGenreMedia()
+Media : + getTypeOfMedia()
+
+
+Abstract Amedia
+Amedia : - Arraylist<listOfMedia> mediaList
+Amedia : - int yearOfReleaseMedia
+Amedia : - String genreMedia
+Amedia : - String typeOfMedia
+Amedia : - String nameOfMedia
+
+
+Amedia : + getNameMedia()
+Amedia : + getYearOfReleaseMedia()
+Amedia : + getGenreMedia()
+Amedia : + getTypeOfMedia()
+
+Amedia <|--  Movie
+
+
+Movie : Movie( String nameOfMedia, int yearOfReleaseMedia, String genreMedia, String typeOfMedia)
+
+
+
+
+Amedia <|-- Series
+
+Series : - int Season
+Series : - int episode
+
+
+
+Series : Series(String nameMedia, int yearOfReleaseMedia, String genreMedia, int seasonSeries, int episodeSeries, String typeOfMedia)
+
+Series : + getSeasonSeries()
+Series : + getEpisodeSeries()
+
+
+@endum

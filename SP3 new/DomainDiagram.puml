@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/object-diagram
+
+object Account
+object User
+object MainMenu
+object Movie
+object Series
+object Rating
+object Media
+
+User --* Account
+Account --* MainMenu
+
+
+MainMenu --* Rating
+MainMenu --Media
+
+Media <|--  Movie
+Media <|-- Series
+PlantUML.com
+
+@enduml

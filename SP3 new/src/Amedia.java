@@ -16,6 +16,7 @@ public abstract class Amedia implements Media {
         year = "";
         genre = "";
         rating = "";
+        
     }
 
 
